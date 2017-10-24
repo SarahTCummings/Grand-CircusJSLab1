@@ -12,7 +12,7 @@ startGame(answer);
 function startGame(answer) {
   if (answer === "yes") {
   playerName = prompt("What is your name, human?"); 
-  startCombat("Sarah");
+  startCombat( playerName );
     } else {
       console.log ("Begone!");
             }
@@ -40,7 +40,7 @@ function startCombat(playerName) {
         
         if ( wins === 3) {
         console.log("You have defeated the Almighty Grant, Oh Great " +playerName+ ", I bow down to your glory!!");
-          }else {
+          }else if (player <= 0) { 
           console.log("You have lost," +playerName+ ", you puny human.");
           }
        
