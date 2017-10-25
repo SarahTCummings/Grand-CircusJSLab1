@@ -1,13 +1,5 @@
-grant = 10
-player = 40
-wins = 0
-var playerName;
+
 var grantDeath = 0;
-var keepPlaying = "attack"
-
-var answer = prompt("Do you want to play a game with the Almighty Grant?");
-startGame(answer);
-
 
 function startGame(answer) {
   if (answer === "yes") {
@@ -18,31 +10,61 @@ function startGame(answer) {
             }
 }
 
+var answer = prompt("Do you want to play a game with the Almighty Grant?");
+startGame(answer);
+
 
 function startCombat(playerName) {
-        while (player > 0 && grant > 0 && grantDeath <3 && keepPlaying === "attack") {
-        grant = grant - (Math.floor((Math.random() * 2) + 1)); 
-        console.log("Almighty Grant has " +grant+ " health points");
-        player = player- (Math.floor((Math.random() * 2) + 1));
-        console.log("Sad Human " +playerName+ " has "+player+ " health points");
+        while (character.health > 0 && grant.health > 0 && grantDeath <3 && keepPlaying === "attack"|| "heal") {
+        character.health -= grant.generateAttackDamage; 
+        grant.health -= character.generateAttackDamage;   
+        console.log( "Sad Human "+playerName+" has " +character.health+ " health points") ; 
+        console.log( "Almighty Grant has "+grant.health+" health points"); 
         if (grant <= 0) {
-          wins++;
+          character.wins++;
           grant=10;
           grantDeath++;
         }
-        
-        keepPlaying = prompt("Do you want to attack or quit?");
+            
+        keepPlaying = prompt("Do you want to attack, quit, or heal?");
         if (keepPlaying === "quit") {
          console.log("goodbye"); 
          return; 
+        } else if (keepPlaying === "heal") {
+           console.log ( "You've recieved "+character.heal+" heal points")
         }
-        console.log( "Your wins:" +wins );
+        console.log( "Your wins:" +character.wins );
         
-        if ( wins === 3) {
+        if ( character.wins === 3) {
         console.log("You have defeated the Almighty Grant, Oh Great " +playerName+ ", I bow down to your glory!!");
-          }else if (player <= 0) { 
+          }else if (character.health <= 0) { 
           console.log("You have lost," +playerName+ ", you puny human.");
           }
-       
-  
+        }
+
+var character= {
+    
+    name: playerName, 
+    health: 40,
+    healCount: 0, 
+    wins: 0, 
+    
+    generateAttackDamage: function(){
+       return (Math.floor((Math.random() * 3) + 1)); 
+    
+        
+        function heal () {
+        if ( keepPlaying === "heal") {
+            (Math.floor((Math.random() * 10) + 1)) + this.health;
+            this.healCount++; }
+                        }   
+                    }
+                }
+
+var grant= {
+    
+    name: "Almighty Grant", 
+    health: 10, 
+    generateAttackDamage: function(){
+       return (Math.floor((Math.random() * 3) + 1)); 
 }}
