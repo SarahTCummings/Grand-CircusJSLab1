@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
-    <script src="game.js"></script>
-
-<h1>This is a game you can play</h1>
-
-<p>Get ready for fun</p>
-
-</body>
+<head>
+  <meta charset="utf-8">
+  <link rel = "stylesheet" type = "text/css" href = "styles.css">
+  <title>Lab 2 Part 4 </title>
+</head>
+  <body>
+    <div id="first_page"> <button id="start" type="button">Start</button> </div>
+    <div id="second_page">
+          <p> Your Health Status: <span id="playerspan"></span> </p>
+          <p> Grant Health Status:  <span id="grantspan"><span> </p>
+          <button id= "attack" type="button">Attack</button>
+          <button id= "heal" type="button">Heal</button>
+          <button id= "quit" type="button">Quit</button>
+          <div>
+          <p>Player health <br> <progress id="pb1" value="0" max "40"> </progress> </p>
+          <p>Grant health <br> <progress id="pb2" value="0" max "10"> </progress> </p></div>
+    </div>
+    <script src="scriptfinal.js"> </script>
+  </body>
 </html>
