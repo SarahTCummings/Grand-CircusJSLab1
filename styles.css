@@ -1,0 +1,24 @@
+body {
+    background-color: rgba(190, 217, 249, 1);
+}
+
+button{
+    background-color: green;
+    color: rgba(190, 217, 249, 1);
+    margin: 3px;
+}
+
+div {
+    display: block;
+    text-align: center;
+
+
+}
+
+#first_page {
+     display:contents;
+}
+
+#second_page {
+    display:none;
+}
