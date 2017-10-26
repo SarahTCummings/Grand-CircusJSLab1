@@ -4,7 +4,7 @@ var grantDeath = 0;
 function startGame(answer) {
   if (answer === "yes") {
   playerName = prompt("What is your name, human?"); 
-  startCombat( playerName );
+  startCombat( player.name );
     } else {
       console.log ("Begone!");
             }
@@ -44,7 +44,7 @@ function startCombat(playerName) {
 
 var character= {
     
-    name: playerName, 
+    name: "I am the best developer ever", 
     health: 40,
     healCount: 0, 
     wins: 0, 
